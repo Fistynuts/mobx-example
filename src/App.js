@@ -1,17 +1,20 @@
 import React from 'react';
-import Store from './store';
+import { Provider } from 'mobx-react';
+import BookStore from './BookStore';
 import BookList from './Components/BookList/BookList';
 
 import './App.css';
 
 function App() {
 
-  const store = new Store();
+  const bookStore = new BookStore();
 
   return (
-    <div className="App">
-
-    </div>
+    <Provider store = {bookStore}>
+      <div className="App">
+        <BookList />
+      </div>
+    </Provider>
   );
 }
 

@@ -1,11 +1,16 @@
 import * as React from 'react';
+import { observer, inject } from "mobx-react";
 
-export default class BookList extends React.Component {
+@inject('store')
+@observer
+class BookList extends React.Component {
   render() {
     return (
       <div>
-        Test
+        { this.props.store.books.map(book => <div id={book.id}>{book.title}</div>) }
       </div>
     )
   }
 }
+
+export default BookList;
