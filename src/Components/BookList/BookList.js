@@ -21,15 +21,18 @@ class BookList extends React.Component {
 
   render() {
     return (
-      <>
+      <div className="container">
         <h1>The Book List</h1>
         <div className="booklist">
-          { this.props.store.books.map(book => <div id={book.id}>{book.title} by {book.author}</div>) }
+        { this.props.store.books.map(book => 
+          <div key={book.id}>{book.title} by {book.author}</div> 
+        )}
         </div>
-        <div>
-          <button type="button" onClick={this.addBook}>Add a Book</button>
+        <div className="total">
+          Total: {this.props.store.numberOfBooks} books
         </div>
-      </>
+        <button className="add-button" type="button" onClick={this.addBook}>Add a Book</button>
+      </div>
     )
   }
 }

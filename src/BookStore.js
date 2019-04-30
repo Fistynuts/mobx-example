@@ -1,4 +1,4 @@
-import { observable } from "mobx";
+import { observable, computed } from "mobx";
 
 export default class BookStore {
   @observable books = [
@@ -13,4 +13,9 @@ export default class BookStore {
       author: "I. P. Freely"
     }
   ];
+
+  @computed
+  get numberOfBooks() {
+    return this.books.length;
+  }
 };

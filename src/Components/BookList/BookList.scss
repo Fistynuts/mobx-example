@@ -1,7 +1,10 @@
-.booklist {
+.container {
   max-width: 50rem;
   margin: 2rem auto;
+}
 
+
+.booklist {
   div {
     padding: 1rem 0;
   }
@@ -9,4 +12,18 @@
   div + div {
     border-top: 1px solid black;
   }
+}
+
+.total {
+  text-align: right;
+}
+
+.add-button {
+  padding: 1rem;
+  border: 1px solid green;
+  border-radius: 0.5rem;
+  background-color: lightgreen;
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 1.2rem;
 }
